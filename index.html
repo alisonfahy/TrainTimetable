@@ -1,0 +1,122 @@
+<!-- ### Instructions
+
+* Make sure that your app suits this basic spec:
+  
+  * When adding trains, administrators should be able to submit the following:
+    
+    * Train Name
+    
+    * Destination 
+    
+    * First Train Time -- in military time
+    
+    * Frequency -- in minutes
+  
+  * Code this app to calculate when the next train will arrive; this should be relative to the current time.
+  
+  * Users from many different machines must be able to view same train times.
+  
+  * Styling and theme are completely up to you. Get Creative!
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Train Timetable</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+    <!-- Moment.js Reference -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <!-- JS -->
+    <script src="app.js"></script>
+</head>
+
+<body>
+
+    <!-- Main title -->
+    <div class="jumbotron">
+        <h1 class="display-4">Train Timetable</h1>
+    </div>
+
+
+    <div class="container">
+
+        <!-- Timetable -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Current Train Schedule</h3>
+                        <table class="table table-sm table-hover" id='train-table'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forms -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Add Employee  -->
+                <div class="card mb-4 p-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Add Train</h3>
+                        <!-- Entry Form -->
+                        <form>
+                            <div class="form-group row">
+                                <label for="train-name-input">Train Name</label>
+                                <input class="form-control" id="train-name-input" type="text">
+                            </div>
+                            <div class="form-group row">
+                                <label for="destination-input">Destination</label>
+                                <input class="form-control" id="destination-input" type="text">
+                            </div>
+                            <div class="form-group row">
+                                <label for="first-time-input">First Train Time (HH:mm - military time)</label>
+                                <input class="form-control" id="first-time-input" type="text">
+                            </div>
+                            <div class="form-group row">
+                                <label for="frequency-input">Frequency (min)</label>
+                                <input class="form-control" id="frequency-input" type="text">
+                            </div>
+                            <button class="btn btn-primary" id="add-train-btn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
